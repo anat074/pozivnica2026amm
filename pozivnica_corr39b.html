@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pozivnica za vjenčanje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://img.freepik.com/free-photo/golden-frame-marble-background_53876-92985.jpg?t=st=1746033415~exp=1746037015~hmac=3868d208a969fc9f27b52c4c4b381595dade367c916321ce93997a63e188a48f&w=740');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    
+
+   
+
+    /* Animacije fadeIn i zoomIn */
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: url('https://img.freepik.com/premium-photo/gold-frame-with-black-roses-design-element_53876-1014273.jpg') center/cover no-repeat;
+      border: 3px solid #d4af37;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      background-color: white;
+      text-align: center;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #b8860b;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 10px;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #8b6914;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 10px 0;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 1.5s;
+    }
+
+    .section {
+      margin-top: 50px;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    .rsvp-button {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 30px auto;
+      background-color: #d4af37;
+      color: white;
+      padding: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      font-size: 16px;
+      text-align: center;
+      border: none;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 2.5s;
+    }
+
+    .rsvp-button:hover {
+      background-color: #b8860b;
+    }
+
+    a.location-link {
+      text-decoration: none;
+      color: #b8860b;
+      font-weight: bold;
+    }
+
+    a.location-link:hover {
+      text-decoration: underline;
+    }
+
+    #countdown {
+      text-align: center;
+      font-size: 20px;
+      color: #8b6914;
+      margin-top: 20px;
+      font-weight: bold;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 1.8s;
+    }
+
+    .contact-info {
+      margin-top: 50px;
+      color: #444;
+      text-align: center;
+      opacity: 0;
+      animation: zoomIn 2s ease-in-out forwards;
+      animation-delay: 2.8s;
+    }
+
+    .contact-heading {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px;
+    }
+
+    .scroll-content {
+      display: inline-flex;
+      gap: 24px;
+    }
+
+    .contact-block {
+      display: inline-block;
+      font-size: 16px;
+      min-width: 140px;
+      color: #444;
+    }
+
+    .contact-block a {
+      text-decoration: none;
+      color: #b8860b;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 20px; }
+      p, .contact-block { font-size: 15px; }
+      .rsvp-button { font-size: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="container">
+    <h1>Ana & Matej</h1>
+    <p style="font-style: italic; color: #8b6914;">
+      Pozivamo vas da uveličate našu svečanost koja će se održati...
+    </p>
+    <h2>Vjenčanje – 26. srpnja 2026.</h2>
+
+    <div id="countdown"></div>
+
+    <div class="section">
+      <h2>Okupljanje</h2>
+      <p>Okupljanje gostiju započinje u 14:00 na 
+        <a href="https://maps.google.com/?q=Parkiralište+kod+osnovne+škole,+Vukovina" target="_blank" class="location-link">
+          Parkiralištu kod škole, Vukovina
+        </a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Obred vjenčanja</h2>
+      <p>Vjenčanje će se održati u 
+        <a href="https://maps.google.com/?q=Crkva+Pohoda+Blažene+Djevice+Marije,+Vukovina" target="_blank" class="location-link">
+          Crkvi Pohoda Blažene Djevice Marije, Vukovina
+        </a> u 15:00.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Proslava</h2>
+      <p>Proslava će uslijediti u 
+        <a href="https://maps.google.com/?q=Restoran,+Velika+Gorica" target="_blank" class="location-link">
+          Restoranu, Velika Gorica
+        </a> s početkom u 17:30.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>Molimo vas da potvrdite dolazak do 1. lipnja 2026.</p>
+      <a href="[OVDJE_STAVI_LINK_NA_SVOJ_GOOGLE_FORMULAR]" class="rsvp-button" target="_blank">Potvrdi dolazak</a>
+    </div>
+
+    <div class="contact-info">
+      <p class="contact-heading">Kontakt:</p>
+      <div class="scroll-container">
+        <div class="scroll-content">
+          <div class="contact-block">
+            <strong>Ana:</strong> <a href="tel:+385XXXXX">+385XXXXX</a>
+          </div>
+          <div class="contact-block">
+            <strong>Matej:</strong> <a href="tel:+385XXXXX">+385XXXXX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Odbrojavanje -->
+  <script>
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("2026-07-26T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        countdown.innerHTML = "Dan vjenčanja je stigao!";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+  
+  
+</body>
+</html>
